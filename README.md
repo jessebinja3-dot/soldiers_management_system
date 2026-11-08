@@ -4,4 +4,4 @@ A database project for a Soldiers Management System, focused on managing soldier
 # students who contribute to this assignment:
 - Jesse Binja : 202512173
 - Anfal Noof: 202511770
-- Mfimukiza Rogers : 2025513528
+- Mfimukiza Rogers : 202513528
