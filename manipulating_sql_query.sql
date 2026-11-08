@@ -1,18 +1,10 @@
-
-
-
-
-
 SELECT setval(
     pg_get_serial_sequence('soldiers', 'soldier_id'),
     (SELECT MAX(soldier_id) FROM soldiers)
 );
 
-
-
 SELECT COUNT(*) AS total_soldiers
 FROM soldiers;
-
 
 SELECT COUNT(*) AS total_assignments
 FROM soldier_mission;
@@ -21,11 +13,9 @@ SELECT *
 FROM soldiers
 ORDER BY soldier_id;
 
-
 SELECT *
 FROM soldier_mission
 ORDER BY soldier_id;
-
 
 -- Synchronize the automatic soldier ID sequence.
 -- This prevents PostgreSQL from generating an ID that already exists.
@@ -35,7 +25,6 @@ SELECT setval(
     (SELECT MAX(soldier_id) FROM soldiers)
 );
 
-
 -- Display the last 10 soldiers added to the database.
 -- The newest soldier appears first.
 -- Expected rows: 10.
@@ -44,7 +33,6 @@ SELECT *
 FROM soldiers
 ORDER BY soldier_id DESC
 LIMIT 10;
-
 
 -- Display the last 10 soldiers in ascending ID order.
 -- A subquery first selects the newest 10 soldiers.
@@ -58,7 +46,6 @@ FROM (
     LIMIT 10
 ) AS last_soldiers
 ORDER BY soldier_id ASC;
-
 
 -- Display soldiers whose IDs are 10, 15 or 20.
 -- IN allows us to search for several specific values.
@@ -144,8 +131,6 @@ JOIN units u
 ON s.unit_id = u.unit_id
 WHERE m.mission_id = 1;
 
-
-
 -- Display soldiers who have never participated in any mission.
 -- NOT EXISTS checks that no mission assignment exists for a soldier.
 -- Expected rows: Depends on the existing mission assignments.
@@ -162,7 +147,6 @@ WHERE NOT EXISTS (
     FROM soldier_mission sm
     WHERE sm.soldier_id = s.soldier_id
 );
-
 
 -- Count the number of soldiers in each military unit.
 -- LEFT JOIN also displays units with zero soldiers.
