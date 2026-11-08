@@ -38,31 +38,3 @@ CREATE TABLE soldier_mission (
     mission_role VARCHAR(100) NOT NULL,
     PRIMARY KEY (soldier_id, mission_id)
 );
-
-
-INSERT INTO ranks (rank_id, rank_name, rank_level)
-VALUES (1, 'Private', 1),
-       (2, 'Corporal', 2),
-       (3, 'Sergeant', 3),
-       (4, 'Lieutenant', 4),
-       (5, 'Captain', 5),
-       (6, 'Major', 6);
-
-
-
-INSERT INTO units (unit_id, unit_name, locations) VALUES
-(1, 'Alpha Company', 'North Camp'),
-(2, 'Bravo Company', 'South Camp'),
-(3, 'Charlie Company', 'East Camp'),
-(4, 'Delta Company', 'West Camp'),
-(5, 'Signals Unit', 'Central Camp'),
-(6, 'Medical Unit', 'Central Camp');
-
-
-
-INSERT INTO missions (mission_id, mission_name, start_date, end_date) VALUES
-(1, 'Exercise Falcon', '2025-02-03', '2025-02-28'),
-(2, 'Flood Relief', '2025-04-14', '2025-05-30'),
-(3, 'Border Patrol', '2025-07-01', NULL),
-(4, 'Peace Support', '2025-09-15', NULL),
-(5, 'Field Medical Camp', '2026-01-12', '2026-01-23');
